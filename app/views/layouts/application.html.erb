@@ -8,13 +8,21 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
 
-    <%= yield %>
+    <%= render 'layouts/alerts' %>
+    <%= render 'layouts/header' %>
 
+    <div id="main-content" class="row full-min-height">
+      <%= yield %>
+    </div>
+
+
+    <%= render 'layouts/footer' %>
+
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   </body>
 </html>
