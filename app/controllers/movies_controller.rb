@@ -10,6 +10,10 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
+
+    @movie = Movie.find(params[:id])
+    @cart_action = @movie.cart_action current_user.try :id
+
   end
 
   # GET /movies/new
